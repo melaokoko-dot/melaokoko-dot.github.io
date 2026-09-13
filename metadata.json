@@ -1,6 +1,6 @@
 {
   "name": "Mela Okoko Portfolio",
-  "description": "A minimalist, high-contrast portfolio for Mela Okoko, featuring architectural design and visual storytelling modes.",
+  "description": "A minimalist, borderless photography archive for Mela Okoko, featuring documentary and street photo stories.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

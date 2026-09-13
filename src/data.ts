@@ -1,92 +1,76 @@
 /**
- * ============================================================================
- *  EVERYTHING YOU EDIT LIVES IN THIS FILE.
- *  You should never need to open any other file to update your site.
- * ============================================================================
- *
- *  HOW TO ADD A NEW SHOOT / PROJECT
- *  ---------------------------------------------------------------------------
- *  1. Put your images in a new folder inside:  public/assets/photos/
- *     e.g.  public/assets/photos/07_new-project-name/IMG-1.jpg
- *
- *  2. Copy one of the objects below (inside COMMISSIONS or PERSONAL_PROJECTS),
- *     paste it at the top of the list, and edit the fields:
- *       - id          -> a short unique lowercase slug, no spaces (e.g. 'new-project')
- *       - title       -> what shows in the sidebar and gallery header
- *       - client      -> (commissions only) who it was shot for, e.g. "FOR VOGUE"
- *       - category    -> small label under the title, e.g. "DOCUMENTARY"
- *       - description -> a sentence or two about the project
- *       - coverImage  -> path to the thumbnail used in the sidebar/homepage
- *       - images      -> the full ordered list of photos shown in the gallery
- *
- *  3. Save the file. That's it — the sidebar, homepage grid, and gallery
- *     view all update automatically.
- *
- *  TO REMOVE A PROJECT: delete its whole { ... } block (including the comma
- *  after it) from the array.
- *
- *  TO REORDER: cut and paste the { ... } blocks into the order you want —
- *  the sidebar and homepage follow the array order top to bottom.
- * ============================================================================
+ * Story and site content data.
+ * All stories, image paths, and bio information are defined here.
  */
 
 export interface Project {
   id: string;
   title: string;
-  client?: string; // e.g. "FOR NETFLIX" — only used for commissions
-  category: string;
-  description: string;
+  category?: string;
+  client?: string;
+  description?: string;
   coverImage: string;
   images: string[];
 }
 
-// ----------------------------------------------------------------------------
-// SITE-WIDE INFO — your name, bio, and contact details (shown on the About page)
-// ----------------------------------------------------------------------------
 export const SITE_CONTENT = {
-  name: 'MELA OKOKO',
-  role: 'ARCHITECTURAL TECHNOLOGIST + STREET & DOCUMENTARY PHOTOGRAPHER',
-  location: 'NAIROBI, KENYA',
-  bio: 'MELA OKOKO IS AN ARCHITECTURAL TECHNOLOGIST AND A STREET AND DOCUMENTARY PHOTOGRAPHER IN NAIROBI, KENYA. HIS WORK EXPLORES THE INTERSECTION OF BUILT ENVIRONMENTS AND NARRATIVE STORYTELLING. THROUGH PRECISION DESIGN AND CANDID DOCUMENTATION, HE SEEKS TO CAPTURE THE SOUL OF THE SPACES WE INHABIT.',
+  name: 'Mela Okoko',
+  overviewTitle: 'Mela Okoko',
+  location: 'Nairobi, Kenya',
+  role: '',
+  bio: 'Based in Nairobi, Kenya. The work explores the intersection of built environments, everyday life, and narrative storytelling, observing the quiet rhythm, light, and human stories within the spaces and communities we inhabit.',
+  publishing: [
+    'Africa Collect Textiles — Dandora Dumpsite Archive',
+    'Nairobi Urban & Cultural Photographic Series',
+  ],
+  commissions: [
+    'Africa Collect Textiles',
+    'The Loom Room (2025)',
+  ],
+  affiliations: [
+    'Africa Collect Textiles',
+    'The Loom Room (2025)',
+  ],
+  collaborations: ['Africa Collect Textiles', 'The Loom Room (2025)'],
   contacts: {
-    email: 'MELAOKOKO@GMAIL.COM',
+    email: 'melaokoko@gmail.com',
     phone: '+254 740 326 509',
-    instagram: '@MELAOKOKO',
+    instagram: '@melaokoko',
     instagramUrl: 'https://instagram.com/melaokoko',
   },
-  collaborations: ['AFRICA COLLECT TEXTILES', 'THE LOOM ROOM 2025'],
 };
 
-// ----------------------------------------------------------------------------
-// COMMISSIONS — client / paid work. Shows in its own group in the sidebar.
-// Leave the array empty ( [] ) if you don't have any yet — the section will
-// simply not appear until you add one.
-// ----------------------------------------------------------------------------
-export const COMMISSIONS: Project[] = [
-  // EXAMPLE — copy this block to add a real commission, or delete it.
-  // {
-  //   id: 'brand-campaign-2026',
-  //   title: 'SUMMER CAMPAIGN',
-  //   client: 'FOR AFRICA COLLECT TEXTILES',
-  //   category: 'COMMERCIAL',
-  //   description: 'A campaign shoot documenting the textile recycling process for ACT\'s 2026 brand refresh.',
-  //   coverImage: 'assets/photos/07_brand-campaign/cover.jpg',
-  //   images: [
-  //     'assets/photos/07_brand-campaign/01.jpg',
-  //     'assets/photos/07_brand-campaign/02.jpg',
-  //   ],
-  // },
+/**
+ * Select list of photographs for the landing page / overview collage.
+ * These can be customized or reordered in the code as needed.
+ */
+export const LANDING_PAGE_IMAGES: string[] = [
+  'assets/photos/01_shades-of-nairobi/SON-1.jpg',
+  'assets/photos/01_shades-of-nairobi/SON-18.jpg',
+  'assets/photos/01_shades-of-nairobi/SON-16.jpg',
+  'assets/photos/02_dandora-dumpsite/DD-1.jpg',
+  'assets/photos/02_dandora-dumpsite/DD-6.jpg',
+  'assets/photos/02_dandora-dumpsite/DD-11.jpg',
+  'assets/photos/03_shepherd-of-the-city/SOTC-1.jpg',
+  'assets/photos/03_shepherd-of-the-city/SOTC-3.jpg',
+  'assets/photos/03_shepherd-of-the-city/SOTC-9.jpg',
+  'assets/photos/04_the-boda-boda-stage/BBS-1.jpg',
+  'assets/photos/04_the-boda-boda-stage/BBS-4.jpg',
+  'assets/photos/04_the-boda-boda-stage/BBS-7.jpg',
+  'assets/photos/05_river-road-chronicles/RRC-1.jpg',
+  'assets/photos/05_river-road-chronicles/RRC-3.jpg',
+  'assets/photos/05_river-road-chronicles/RRC-5.jpg',
+  'assets/photos/06_kibera-transit/KT-1.jpg',
+  'assets/photos/06_kibera-transit/KT-4.jpg',
+  'assets/photos/06_kibera-transit/KT-7.jpg',
 ];
 
-// ----------------------------------------------------------------------------
-// PERSONAL PROJECTS — your own series and long-term bodies of work.
-// ----------------------------------------------------------------------------
-export const PERSONAL_PROJECTS: Project[] = [
+export const STORIES: Project[] = [
   {
-    id: 'street',
-    title: 'SHADES OF NAIROBI',
-    category: 'STREET PHOTOGRAPHY',
-    description: 'Nairobi\u2019s beauty and form exist beyond color.',
+    id: 'shades-of-nairobi',
+    title: 'Shades of Nairobi',
+    category: 'Street Photography',
+    description: 'Nairobi’s beauty and form exist beyond color.',
     coverImage: 'assets/photos/01_shades-of-nairobi/SON-18.jpg',
     images: [
       'assets/photos/01_shades-of-nairobi/SON-1.jpg',
@@ -112,11 +96,11 @@ export const PERSONAL_PROJECTS: Project[] = [
     ],
   },
   {
-    id: 'cradle-of-forgotten',
-    title: 'CRADLE OF THE FIFTH',
-    category: 'DOCUMENTARY',
+    id: 'cradle-of-the-fifth',
+    title: 'Cradle of the Fifth',
+    category: 'Documentary',
     description:
-      'During visits to the Dandora Dumpsite, this documentary encounters the faces, hands, and lives shaped by the realities of the site. The series captures the landscapes and communities surrounding the dumpsite, the people who survive through it, work within it, and transform discarded textile waste into something of value. Created in collaboration with Africa Collect Textiles during their tours of the dumpsite, the project explores the human stories woven into Nairobi\u2019s waste economy.',
+      'During visits to the Dandora Dumpsite, this documentary encounters the faces, hands, and lives shaped by the realities of the site. The series captures the landscapes and communities surrounding the dumpsite, the people who survive through it, work within it, and transform discarded textile waste into something of value. Created in collaboration with Africa Collect Textiles during their tours of the dumpsite, the project explores the human stories woven into Nairobi’s waste economy.',
     coverImage: 'assets/photos/02_cradle-of-forgotten/Cradle of the forgoten-18.jpg',
     images: [
       'assets/photos/02_cradle-of-forgotten/Cradle of the forgoten-1.jpg',
@@ -141,11 +125,11 @@ export const PERSONAL_PROJECTS: Project[] = [
     ],
   },
   {
-    id: 'seeds-of-nomad',
-    title: 'SEEDS OF A NOMAD',
-    category: 'DOCUMENTARY',
+    id: 'seeds-of-a-nomad',
+    title: 'Seeds of a Nomad',
+    category: 'Documentary',
     description:
-      'After generations of moving with their herds across Narok\u2019s wide plains, this community turns to farming on land once held for grazing. These images reflect the quiet rhythm, change, and solitude woven into this transition.',
+      'After generations of moving with their herds across Narok’s wide plains, this community turns to farming on land once held for grazing. These images reflect the quiet rhythm, change, and solitude woven into this transition.',
     coverImage: 'assets/photos/03_seeds-of-nomad/Seeds of a Normad-5.jpg',
     images: [
       'assets/photos/03_seeds-of-nomad/Seeds of a Normad-11.jpg',
@@ -164,11 +148,11 @@ export const PERSONAL_PROJECTS: Project[] = [
     ],
   },
   {
-    id: 'children-of-nairobi',
-    title: 'ECHOES OF PLAY',
-    category: 'STREET PHOTOGRAPHY',
+    id: 'echoes-of-play',
+    title: 'Echoes of Play',
+    category: 'Street Photography',
     description:
-      'Fragments of everyday streets where childhood breaks through the noise\u2014children turning dust, light, and movement into play. A quiet record of joy unfolding in passing moments.',
+      'Fragments of everyday streets where childhood breaks through the noise—children turning dust, light, and movement into play. A quiet record of joy unfolding in passing moments.',
     coverImage: 'assets/photos/04_children-of-nairobi/Children of colour-3.jpg',
     images: [
       'assets/photos/04_children-of-nairobi/Children of colour-1.jpg',
@@ -186,8 +170,8 @@ export const PERSONAL_PROJECTS: Project[] = [
   },
   {
     id: 'street-of-colour',
-    title: 'STREET OF COLOUR',
-    category: 'STREET PHOTOGRAPHY',
+    title: 'Street of Colour',
+    category: 'Street Photography',
     description:
       'Where light lingers on faces, movement, and moments that pass too quickly to hold, yet stay vivid in memory.',
     coverImage: 'assets/photos/05_street-of-colour/SOC-8.jpg',
@@ -225,10 +209,10 @@ export const PERSONAL_PROJECTS: Project[] = [
   },
   {
     id: 'kibera-art',
-    title: 'KIBERA ART DISTRICT',
-    category: 'DOCUMENTARY',
+    title: 'Kibera Art District',
+    category: 'Documentary',
     description:
-      'Kibera Art District is a living canvas where creativity grows from the streets. Beyond the walls and alleys, hidden talent emerges in paint, performance, and craft, young artists turning struggle into expression, and everyday life into powerful visual stories shaped by resilience, imagination, and community spirit.',
+      'Kibera Art District is a living canvas where creativity grows from the streets. Beyond the walls and alleys, young artists turn struggle into expression, and everyday life into powerful visual stories shaped by resilience, imagination, and community spirit.',
     coverImage: 'assets/photos/06_kibera-art/Kibera-5.jpg',
     images: [
       'assets/photos/06_kibera-art/Kibera-5.jpg',
@@ -252,3 +236,7 @@ export const PERSONAL_PROJECTS: Project[] = [
     ],
   },
 ];
+
+// Backwards compatibility aliases
+export const PERSONAL_PROJECTS = STORIES;
+export const COMMISSIONS: Project[] = [];

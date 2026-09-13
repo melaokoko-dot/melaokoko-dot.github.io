@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Project } from '../data';
 
 interface GalleryProps {
+  key?: string | number;
   project: Project;
 }
 
