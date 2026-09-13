@@ -26,22 +26,6 @@ body {
   background: #666;
 }
 
-/* Scroll Snap */
-.scroll-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-}
-
-.scroll-item {
-  scroll-snap-align: start;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Grainy B&W filter */
 .grainy-bw {
   filter: grayscale(100%) contrast(110%);
